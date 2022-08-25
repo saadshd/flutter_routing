@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_routing/page_one.dart';
+import 'package:flutter_routing/page_three.dart';
+import 'package:flutter_routing/page_two.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +14,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'MSS Navigation',
       theme: ThemeData(
+        useMaterial3: true,
         primarySwatch: Colors.indigo,
-        scaffoldBackgroundColor: Colors.indigo.shade100,
       ),
+      initialRoute: PageOne.id,
+      routes: {
+        PageOne.id : (context) => PageOne(),
+        PageTwo.id : (context) => PageTwo(),
+        PageThree.id : (context) => PageThree(),
+      }
 
 
     );
